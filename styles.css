@@ -45,3 +45,7 @@ p {
 .coffee-dist {
     max-width: 15%;
 }
+
+#locationInfo {
+    background-color: grey;
+}

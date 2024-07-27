@@ -83,5 +83,22 @@ function initMap() {
   }
   
   // Load the map after the window has loaded
-  window.onload = initMap;
+  // window.onload = initMap;
   
+document.getElementById('getLocation').addEventListener('click', function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    document.getElementById('locationInfo').innerText = "Geolocation is not supported by this browser.";
+  }
+});
+
+function showPosition(position) {
+  const lat = position.coords.latitude;
+  const lng = position.coords.longitude;
+  document.getElementById('locationInfo').innerHTML = `Latitude: ${lat} <br> Longitude: ${lng}`;
+}
+
+function showError() {
+  document.getElementById('locationInfo').innerText = error.code;
+}
