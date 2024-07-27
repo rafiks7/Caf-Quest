@@ -13,7 +13,8 @@
         "32": "./coffee.png",
         "48": "./coffee.png"
     },
-    "permission": [
-        "geolocation"
+    "permissions": [
+        "geolocation",
+        "offscreen"
     ]
 }
