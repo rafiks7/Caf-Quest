@@ -18,6 +18,7 @@ a, a:active, a:visited {
     color: #462521;
     margin: auto;
     transition: 200ms linear;
+    text-decoration: none;
 }
 
 a:hover {
