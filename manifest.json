@@ -7,5 +7,10 @@
     "action": {
         "default_popup": "popup.html",
         "default_title": "Coffee Near You"
+    },
+    "icons": {
+        "16": "./coffee.png",
+        "32": "./coffee.png",
+        "48": "./coffee.png"
     }
 }
