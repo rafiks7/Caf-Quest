@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./popup.css" />
+    <title>Simple Map</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyHfg5Fz9gRcyvsQWTxYmDPjfaCFqTP8&callback=initMap" 
+        async 
+        defer>
+    </script>
+    <script type="module" src="./popup.js"></script>
 </head>
 <body>
-    <a href="" target="_blank"><p class="coffee-name"></p></a>
-    <p class="coffee-dist"></p>
-    <!-- API Integration Will Go Here -->
-    <div id="map-display"></div>
-    <script src="./popup.js" type="module"></script>
+    <h1>Hello</h1>
+    <div id="map" style="height: 100vh; width: 100vw;"></div>
 </body>
 </html>
