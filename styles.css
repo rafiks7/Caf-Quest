@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffe0b5;
+    color: #462521;
+    width: 13rem;
+    height: auto;
+    font-family: cursive;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a, a:active, a:visited {
+    color: #462521;
+    margin: auto;
+    transition: 200ms linear;
+}
+
+a:hover {
+    color: #ffe0b5;
+    background-color: #8a6552;
+}
+
+p {
+    font-size: 13px;
+    margin: auto;
+}
+
+#coffee-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-name {
+    max-width: 80%;
+}
+
+.coffee-dist {
+    max-width: 20%;
+}
