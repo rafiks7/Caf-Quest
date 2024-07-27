@@ -37,11 +37,12 @@ function initMap() {
             const places = results.map(place => {
               // Calculate distance
               const placeLocation = place.geometry.location;
-              const distance = google.maps.geometry.spherical.computeDistanceBetween(userLocation, placeLocation);
+              const distance = google.maps.geometry.spherical.computeDistanceBetween(userLocation, placeLocation)/1609.34;
+
   
               return {
                 name: place.name,
-                distance: Math.round(distance), // Distance in meters
+                distance: Math.round(distance * 10)/10, // Distance in miles
               };
             });
   
