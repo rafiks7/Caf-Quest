@@ -1,9 +1,11 @@
 function initMap() {
     // Check if Geolocation is supported
     if (navigator.geolocation) {
+      // Use geolocation to find the current position (latitude & longitude)
       navigator.geolocation.getCurrentPosition(function(position) {
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
+        const userLocation = new google.maps.LatLng(lat, lng);
   
         // Create the map centered on the user's location
         const map = new google.maps.Map(document.getElementById('map'), {
@@ -21,7 +23,7 @@ function initMap() {
         // Define the request for nearby places (e.g., restaurants, cafes)
         const request = {
           location: { lat: lat, lng: lng },
-          radius: '500', // Search within a 500-meter radius
+          radius: '3219', // Search within a 2-mile radius
           type: ['cafe'] // You can change this to 'cafe', 'bar', etc.
         };
   
@@ -31,20 +33,36 @@ function initMap() {
         // Perform the nearby search
         service.nearbySearch(request, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
-            // Place markers for each result
-            for (let i = 0; i < results.length; i++) {
-              createMarker(results[i]);
-            }
+            // Process and log results
+            const places = results.map(place => {
+              // Calculate distance
+              const placeLocation = place.geometry.location;
+              const distance = google.maps.geometry.spherical.computeDistanceBetween(userLocation, placeLocation);
+  
+              return {
+                name: place.name,
+                distance: Math.round(distance), // Distance in meters
+              };
+            });
+  
+            // Log the extracted place objects
+            console.log('Processed Places:', places);
+  
+            // Create markers for each place
+            results.forEach(place => {
+              createMarker(place);
+            });
           } else {
             console.error('Places request failed due to:', status);
           }
         });
-  
+        
         // Function to create a marker for a place
         function createMarker(place) {
           const marker = new google.maps.Marker({
             map: map,
-            position: place.geometry.location
+            position: place.geometry.location,
+            title: place.name
           });
   
           // Add an info window when the marker is clicked
