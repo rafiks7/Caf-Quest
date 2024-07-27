@@ -10,6 +10,10 @@ body {
     font-family: cursive;
 }
 
+ul, li {
+    text-decoration: none;
+}
+
 a, a:active, a:visited {
     color: #462521;
     margin: auto;
