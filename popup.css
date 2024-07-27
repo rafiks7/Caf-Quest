@@ -11,7 +11,7 @@ body {
 }
 
 ul, li {
-    text-decoration: none;
+    list-style-type: none;
 }
 
 a, a:active, a:visited {
@@ -28,4 +28,19 @@ a:hover {
 p {
     font-size: 13px;
     margin: auto;
+}
+
+#coffee-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-name {
+    max-width: 80%;
+}
+
+.coffee-dist {
+    max-width: 20%;
 }
