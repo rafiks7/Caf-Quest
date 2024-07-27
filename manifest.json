@@ -1,7 +1,7 @@
 {
     "name": "Caffeine Quest",
     "version": "1.0.0",
-    "description": "displays coffee shops near you",
+    "description": "Displays the nearest coffee shop to you",
     "manifest_version": 3,
     "author": "Rafik Shukralla, Devarshi Chatterjee, Abdelrahamn Essam, Andrew Shiroma",
     "action": {
@@ -12,5 +12,8 @@
         "16": "./coffee.png",
         "32": "./coffee.png",
         "48": "./coffee.png"
-    }
+    },
+    "permissions": [
+        "offscreen"
+    ]
 }

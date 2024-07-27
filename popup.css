@@ -4,15 +4,15 @@
 
 body {
     background-color: #ffe0b5;
+    color: #462521;
     width: 13rem;
     height: auto;
     font-family: cursive;
 }
 
 a, a:active, a:visited {
-    font-size: 15px;
-    margin: auto;
     color: #462521;
+    margin: auto;
     transition: 200ms linear;
 }
 
@@ -22,7 +22,6 @@ a:hover {
 }
 
 p {
-    font-size: 15px;
+    font-size: 13px;
     margin: auto;
-    color: #462521;
 }
