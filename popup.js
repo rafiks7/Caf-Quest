@@ -41,6 +41,8 @@ function findCoffeeShops() {
               return {
                 name: place.name,
                 distance: Math.round(distance * 10) / 10, // Distance in miles
+                hyperlink: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`
+
               };
             });
 
