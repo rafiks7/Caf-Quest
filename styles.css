@@ -28,7 +28,6 @@ a:hover {
 
 p {
     font-size: 13px;
-    margin: auto;
 }
 
 #coffee-items {
@@ -36,12 +35,13 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .coffee-name {
-    max-width: 80%;
+    max-width: 75%;
 }
 
 .coffee-dist {
-    max-width: 20%;
+    max-width: 15%;
 }
