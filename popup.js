@@ -14,12 +14,11 @@ function findCoffeeShops() {
           zoom: 15
         });
 
-        // Define the request for nearby places (e.g., restaurants, cafes)
+        // Define the request for nearby places (e.g., cafes)
         const request = {
-          location: { lat: lat, lng: lng },
-          rankBy: google.maps.places.RankBy.DISTANCE, // Rank results by distance
-          type: ["cafe"], // You can change this to 'cafe', 'bar', etc.
-          
+          location: userLocation,
+          rankBy: google.maps.places.RankBy.DISTANCE,
+          type: ["cafe"]
         };
 
         // Create a PlacesService instance
@@ -42,30 +41,40 @@ function findCoffeeShops() {
                 name: place.name,
                 distance: Math.round(distance * 10) / 10, // Distance in miles
                 hyperlink: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`
-
               };
             });
 
             // Log the extracted place objects
             console.log("Processed Places:", places);
 
-            // Return the places array
-            return places;
+            // Update the popup HTML with the list of coffee shops
+            updateCoffeeShopsList(places);
           } else {
             console.error("Places request failed due to:", status);
-            return [];
           }
         });
       },
       function () {
         console.error("Geolocation service failed.");
-        return [];
       }
     );
   } else {
     console.error("Geolocation is not supported by this browser.");
-    return [];
   }
+}
+
+function updateCoffeeShopsList(places) {
+  const list = document.getElementById('coffee-shops');
+  list.innerHTML = ''; // Clear any existing list items
+  places.forEach(shop => {
+    const listItem = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = shop.hyperlink;
+    link.target = '_blank';
+    link.textContent = `${shop.name} - ${shop.distance} miles`;
+    listItem.appendChild(link);
+    list.appendChild(listItem);
+  });
 }
 
 // Load the map after the window has loaded

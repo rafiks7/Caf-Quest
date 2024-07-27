@@ -4,19 +4,15 @@
     <title>Café Quest</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
     <script 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyHfg5Fz9gRcyvsQWTxYmDPjfaCFqTP8&libraries=places,geometry&loading=async&callback=initMap"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyHfg5Fz9gRcyvsQWTxYmDPjfaCFqTP8&libraries=places,geometry&loading=async"
         async 
         defer>
     </script>
-    <script type="module" src="./popup.js"></script>
 </head>
 <body>
-    <div id="coffee-items">
-        <a class="coffee-name" href="">coffee bean and tea leaf and coffee bean and tea leaf</a>
-        <p class="coffee-dist">1.3 mi</p>
-        <a class="coffee-name" href="">coffee bean and tea leaf and coffee bean and tea leaf</a>
-        <p class="coffee-dist">1.3 mi</p>
+    <div id="container">
+        <ul id="coffee-shops"></ul>
+        <script src="popup.js"></script>
     </div>
-    <script src="popup.js" type="module"></script>
 </body>
 </html>
