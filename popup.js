@@ -64,16 +64,19 @@ function findCoffeeShops() {
 }
 
 function updateCoffeeShopsList(places) {
-  const list = document.getElementById('coffee-shops');
-  list.innerHTML = ''; // Clear any existing list items
+  const container = document.getElementById('coffee-shops');
+  container.innerHTML = ''; // Clear any existing items
   places.forEach(shop => {
-    const listItem = document.createElement('li');
     const link = document.createElement('a');
     link.href = shop.hyperlink;
     link.target = '_blank';
-    link.textContent = `${shop.name} - ${shop.distance} miles`;
-    listItem.appendChild(link);
-    list.appendChild(listItem);
+    link.classList.add('.coffee-name')
+    link.textContent = `${shop.name}`;
+    const dist = document.createElement('p');
+    dist.textContent = `${shop.distance} mi`;
+    dist.classList.add('coffee-dist');
+    container.appendChild(link);
+    container.appendChild(dist);
   });
 }
 
