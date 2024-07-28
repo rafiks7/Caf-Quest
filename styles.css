@@ -10,10 +10,6 @@ body {
     font-family: cursive;
 }
 
-ul, li {
-    list-style-type: none;
-}
-
 a, a:active, a:visited {
     color: #462521;
     margin: auto;
@@ -26,6 +22,10 @@ a:hover {
     background-color: #8a6552;
 }
 
+button {
+    width: 100%;
+}
+
 p {
     font-size: 13px;
 }
@@ -33,6 +33,13 @@ p {
 #coffee-shops {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-items {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }

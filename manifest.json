@@ -13,5 +13,8 @@
         "32": "./coffee.png",
         "48": "./coffee.png"
     },
-    "permission": ["geolocation"]
+    "permissions": ["geolocation"],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' https://maps.googleapis.com https://maps.gstatic.com; object-src 'self'"
+    }
 }
