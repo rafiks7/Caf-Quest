@@ -67,18 +67,48 @@ function updateCoffeeShopsList(places) {
   const container = document.getElementById('coffee-shops');
   container.innerHTML = ''; // Clear any existing items
   places.forEach(shop => {
+    //creating an anchor tag with the name
     const link = document.createElement('a');
     link.href = shop.hyperlink;
     link.target = '_blank';
     link.classList.add('.coffee-name')
     link.textContent = `${shop.name}`;
+
+    //creating a p tag with miles
     const dist = document.createElement('p');
     dist.textContent = `${shop.distance} mi`;
     dist.classList.add('coffee-dist');
+
     container.appendChild(link);
     container.appendChild(dist);
   });
 }
 
 // Load the map after the window has loaded
-window.onload = findCoffeeShops;
+// window.onload = function() { findCoffeeShops };
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("find-coffee").addEventListener("click", test);
+});
+
+function test() {
+  const link = document.createElement('a');
+  link.target = '_blank';
+  link.classList.add('.coffee-name')
+  link.textContent = hi;
+  document.getElementById('coffee-shops').appendChild(link)
+}
+/*
+document.getElementById('find-coffee').addEventListener('click', function() {
+  if (navigator.geolocation) {
+    findCoffeeShops
+  } else {
+    document.getElementById('locationInfo').innerText = "Geolocation is not supported by this browser.";
+  }
+});
+
+
+function showPosition(position) {
+  const lat = position.coords.latitude;
+  const lng = position.coords.longitude;
+  document.getElementById('locationInfo').innerHTML = `Latitude: ${lat} <br> Longitude: ${lng}`;
+}*/

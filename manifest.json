@@ -13,7 +13,5 @@
         "32": "./coffee.png",
         "48": "./coffee.png"
     },
-    "permission": [
-        "geolocation"
-    ]
+    "permission": ["geolocation"]
 }
