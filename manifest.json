@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Displays the nearest coffee shop to you",
     "manifest_version": 3,
-    "author": "Rafik Shukralla, Devarshi Chatterjee, Abdelrahamn Essam, Andrew Shiroma",
+    "author": "Rafik Shukralla, Andrew Shiroma",
     "action": {
         "default_popup": "popup.html",
         "default_title": "Coffee Near You"
