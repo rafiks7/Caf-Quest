@@ -7,6 +7,4 @@ Done as part of Headstarter AI's Hackathon 1 in 2024
 
 Contributors:
 * Rafik Shukralla
-* Devarshi Chatterjee
-* Abdelrahamn Essam
 * Andrew Shiroma
